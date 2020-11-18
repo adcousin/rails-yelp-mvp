@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1>Restaurants#new</h1>
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category %>
+      <div class="text-center">
+        <%= f.button :submit, value: 'Y a bon !', class: 'btn btn-primary rounded' %>
+      </div>
+    <% end %>
+
+</div>
+

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Restaurants#show</h1>
+  <h2 class="d-flex justify-content-between">
+    <div><%= @restaurant.name %></div>
+    <div><%= @restaurant.category.capitalize %></div>
+  </h2>
+  <h3>Details</h3>
+    <div><%= @restaurant.address %></div>
+    <div><%= @restaurant.phone_number %></div>
+  <h3>
+    <div>Reviews</div>
+    <%= link_to 'Add a review', new_restaurant_review_path %>
+  </h3>
+  <%= @restaurant.reviews.count %>
+</div>
