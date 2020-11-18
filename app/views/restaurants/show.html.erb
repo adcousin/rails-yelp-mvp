@@ -9,7 +9,6 @@
     <div><%= @restaurant.phone_number %></div>
   <h3 class="d-flex justify-content-between">
     <div>Reviews</div>
-    <div><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %></div>
   </h3>
   <ul class="list-group">
     <% @restaurant.reviews.all.each do |review| %>
@@ -18,4 +17,13 @@
       </li>
     <%  end %>
   </ul>
+
+  <%= simple_form_for [ @restaurant, @review ] do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :content %>
+    <div class="text-center">
+      <%= f.button :submit, value: 'Y a bon !', class: 'btn btn-primary rounded' %>
+    </div>
+  <% end %>
+
 </div>
