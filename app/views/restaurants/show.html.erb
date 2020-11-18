@@ -7,9 +7,15 @@
   <h3>Details</h3>
     <div><%= @restaurant.address %></div>
     <div><%= @restaurant.phone_number %></div>
-  <h3>
+  <h3 class="d-flex justify-content-between">
     <div>Reviews</div>
-    <%= link_to 'Add a review', new_restaurant_review_path %>
+    <div><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %></div>
   </h3>
-  <%= @restaurant.reviews.count %>
+  <ul class="list-group">
+    <% @restaurant.reviews.all.each do |review| %>
+      <li class="list-group-item">
+        <%= "#{review.rating} ****** #{review.content}" %>
+      </li>
+    <%  end %>
+  </ul>
 </div>
