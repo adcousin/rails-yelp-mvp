@@ -14,9 +14,9 @@
     category: Restaurant.restaurant_categories.sample,
     phone_number: Faker::PhoneNumber.cell_phone_in_e164
   )
-  binding.pry
+  # binding.pry
   10.times do
-    tmp_review = Review.create!(
+    tmp_review = Review.new(
       rating: Random.new.rand(5),
       content: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
     )
